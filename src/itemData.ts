@@ -14,6 +14,11 @@ export let itemData={
             "name": "Shield",
             "description": "Defends you",
             "price": 25
+        },
+        {
+            "name": "Gun",
+            "description": "Shoots your enemy",
+            "price": 40
         }
     ]
 }

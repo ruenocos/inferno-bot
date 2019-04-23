@@ -14,15 +14,17 @@ export default class av implements IBotCommand {
     }
 
     async runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): Promise<void> {
-        
-        let user = msgObject.mentions.users.first() || msgObject.author;
+
+        msgObject.delete();
+        let id = args[0];
+        let user = msgObject.mentions.users.first() || client.users.get(id) || msgObject.author;
+
+        if(!user) return;
         let embed = new Discord.RichEmbed()
         .setColor('#efff00')
         .setDescription('EW')
         .setImage(`${user.avatarURL}`)
         msgObject.channel.send(embed)
-        msgObject.delete(3)
-
         .then(console.log)
         .catch(console.log)
     }

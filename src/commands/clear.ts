@@ -1,12 +1,12 @@
 import * as Discord from "discord.js";
 import { IBotCommand } from "../api";
 
-export default class testCommand implements IBotCommand {
+export default class clear implements IBotCommand {
 
-    private readonly _command = "ban"
+    private readonly _command = "clear"
 
     help(): string {
-        return "(admin only) bans mentioned user";
+        return "This command deletes the mentioned user's messages.";
     }
 
     isThisCommand(command: string): boolean {
@@ -15,7 +15,11 @@ export default class testCommand implements IBotCommand {
 
     async runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): Promise<void> {
 
+        msgObject.delete(0);
         let mentionedUser = msgObject.mentions.users.first();
-        msgObject.channel.send(`${mentionedUser} has been banned! ☑👌`)
+        msgObject.channel.fetchMessages().then(messages => {
+            msgObject.channel.bulkDelete(messages.filter(m => m.author === mentionedUser));
+        });
     }
+
 }

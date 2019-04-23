@@ -13,7 +13,7 @@ loadCommands(`${__dirname}/commands`)
 client.on("ready", () => {
 
     //Set the bot's activity.
-    client.user.setActivity("Coding", { type: "PLAYING" });
+    client.user.setActivity("Agony", { type: "PLAYING" });
 
     let allUsers = client.users.array();
     for(let i = 0; i < allUsers.length; i++){
@@ -23,7 +23,7 @@ client.on("ready", () => {
     }
 
     //Display that we're online
-    console.log("ready");
+    console.log("im ready");
 })
 
 client.on('guildMemberAdd', member => {
@@ -40,8 +40,6 @@ client.on('guildMemberAdd', member => {
 
 client.on("guildMemberRemove", member => {
 
-    let welcomeChannel = member.guild.channels.find(channel => channel.name === "welcome") as Discord.TextChannel
-    welcomeChannel.send(`We are sorry to see you leave so soon ${member.displayName}`)
 })
 
 client.on("message", msg => {

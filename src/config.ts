@@ -1,6 +1,6 @@
 export let config = {
     "token": "NTU5MDE1OTA2OTY2MjQxMjkx.XLI3rA.e_UAXrqMfPv9WV8vHUtl7kCMS4o",
-    "prefix": "$",
+    "prefix": "&",
     "commands": [
         "purge",
         "testCommand",
@@ -8,10 +8,11 @@ export let config = {
         "ban",
         "info", 
         "poll",
-        "mute",
         "av",
-        "d",
         "money",
         "buy",
+        "bc",
+        "clear",
+        "help",
     ]
 }
