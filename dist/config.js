@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = {
     "token": "NTU5MDE1OTA2OTY2MjQxMjkx.XLI3rA.e_UAXrqMfPv9WV8vHUtl7kCMS4o",
-    "prefix": "&",
+    "prefix": "!",
     "commands": [
         "purge",
         "testCommand",
