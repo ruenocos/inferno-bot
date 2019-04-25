@@ -17,6 +17,10 @@ export default class bc implements IBotCommand {
     async runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): Promise<void> {
         
         msgObject.delete(0);
+        if(!msgObject.member.hasPermission("MANAGE_MESSAGES"))
+        msgObject.channel.send(`${msgObject.author.username} but you cannot use this command!`)
+
+        if(msgObject.member.hasPermission("MANAGE_MESSAGES"))
         msgObject.channel.fetchMessages().then(messages => {
             msgObject.channel.bulkDelete(messages.filter(m => m.author.bot));
         });

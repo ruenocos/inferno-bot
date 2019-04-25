@@ -12,9 +12,6 @@ loadCommands(`${__dirname}/commands`)
 
 client.on("ready", () => {
 
-    //Set the bot's activity.
-    client.user.setActivity("Agony", { type: "PLAYING" });
-
     let allUsers = client.users.array();
     for(let i = 0; i < allUsers.length; i++){
         if(isNull(db.get(allUsers[i].id))){
@@ -24,6 +21,9 @@ client.on("ready", () => {
 
     //Display that we're online
     console.log("im ready");
+    client.on("message", message => {
+        client.user.setGame("Hell", "https://www.twitch.tv/noobyninjq")
+    });
 })
 
 client.on('guildMemberAdd', member => {
@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on("guildMemberRemove", member => {
-
+    
 })
 
 client.on("message", msg => {
