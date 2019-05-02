@@ -24,9 +24,10 @@ export default class info implements IBotCommand {
             .setTitle("Server Information")
             .setImage(msgObject.guild.iconURL)
             .setDescription(`Welcome to ${msgObject.guild.name}`)
-            .addField("Server Count:", `The server currently has ${msgObject.guild.memberCount}`)
+            .addField("Server Count:", `The server currently has ${msgObject.guild.memberCount} members!`)
 
             console.log(msgObject)
+            msgObject.delete(0);
  
 
         msgObject.channel.send(embed)

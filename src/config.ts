@@ -1,5 +1,5 @@
 export let config = {
-    "token": "NTU5MDE1OTA2OTY2MjQxMjkx.XMD_rw.xCv9N0N3CyfYCxQuCmo48ECfUhM",
+    "token": "NTU5MDE1OTA2OTY2MjQxMjkx.XMFxWQ.xxojAj95p6gF8l1gdS9Cmw2a_so",
     "prefix": "!",
     "commands": [
         "purge",
@@ -21,6 +21,27 @@ export let config = {
         "gamble",
         "fuck",
         "kiss",
-        "unfuck"
+        "unfuck",
+        "rukh",
+        "sol",
+        "pat",
+        "highfive",
+        "hug",
+        "lick",
+        "poke",
+        "insult",
+        "greet",
+        "wave",
+        "stare",
+        "ship",
+        "addmoney",
+        "removemoney",
+        "cuddle",
+        "embed",
+        "pay",
+        "set",
+        "hydra",
+        "uptime",
+        "vanya",
     ]
 }

@@ -21,7 +21,7 @@ export default class purge implements IBotCommand {
 
         //Check if the member is an admin!
         if (!msgObject.member.hasPermission("ADMINISTRATOR")) {
-            msgObject.channel.send(`sorry ${msgObject.author.username} you cannot use this command!`)
+            msgObject.channel.send(`𝔰𝔬𝔯𝔯𝔶 ${msgObject.author.username} 𝔶𝔬𝔲 𝔠𝔞𝔫𝔫𝔬𝔱 𝔲𝔰𝔢 𝔱𝔥𝔦𝔰 𝔠𝔬𝔪𝔪𝔞𝔫𝔡!`)
                 .then(msg => {
                     (msg as Discord.Message).delete(5000)
                         .catch(console.error);
@@ -33,7 +33,7 @@ export default class purge implements IBotCommand {
 
         //Make sure that they have said how many messages they want to delete.
         if (!args[0]) {
-            msgObject.channel.send(`sorry ${msgObject.author.username} but you must supply enough number of messages to be deleted!`)
+            msgObject.channel.send(`𝔰𝔬𝔯𝔯𝔶 ${msgObject.author.username} 𝔟𝔲𝔱 𝔶𝔬𝔲 𝔪𝔲𝔰𝔱 𝔰𝔲𝔭𝔭𝔩𝔶 𝔢𝔫𝔬𝔲𝔤𝔥 𝔫𝔲𝔪𝔟𝔢𝔯 𝔬𝔣 𝔪𝔢𝔰𝔰𝔞𝔤𝔢𝔰 𝔱𝔬 𝔟𝔢 𝔡𝔢𝔩𝔢𝔱𝔢𝔡!`)
                 .then(msg => {
                 if (!msgObject.pinned) {
                     (msg as Discord.Message).delete(5000)
@@ -48,7 +48,7 @@ export default class purge implements IBotCommand {
 
         //Make sure the args[0] is actually a number
         if (isNaN(numberOfMessagesToDelete)) {
-            msgObject.channel.send(`sorry ${msgObject.author.username} but that isn't a valid number.`)
+            msgObject.channel.send(`𝔰𝔬𝔯𝔯𝔶 ${msgObject.author.username} 𝔟𝔲𝔱 𝔱𝔥𝔞𝔱 𝔦𝔰𝔫'𝔱 𝔞 𝔳𝔞𝔩𝔦𝔡 𝔫𝔲𝔪𝔟𝔢𝔯.`)
                 .then(msg => {
                 if (!msgObject.pinned) {
                     (msg as Discord.Message).delete(5000)

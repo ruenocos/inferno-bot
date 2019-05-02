@@ -1,4 +1,5 @@
 import * as Discord from "discord.js";
+import * as db from "quick.db";
 import { IBotCommand } from "../api";
 
 export default class gamble implements IBotCommand {
@@ -22,13 +23,31 @@ export default class gamble implements IBotCommand {
                 let charactersLength = characters.length;
                 for ( let i = 0; i < length; i++ ) {
                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                   msgObject.delete(0);
                 }
-                msgObject.channel.send(result);
+                return result;
              }
+             const num = parseInt(makeid(2));
+
+             if (num === 21)
+             msgObject.channel.send(`Congratulations ${msgObject.member.nickname}! You've won 20$!!!`)
+             db.get(msgObject.member.id)  
+             db.add(`${msgObject.author}.money`, 20);
              
-             console.log(makeid(2));
-        }
+             if (num === 66)
+             msgObject.channel.send(`Congratulations ${msgObject.member.nickname}! You've won 20$!!!`)
+             db.get(msgObject.member.id)  
+             db.add(`${msgObject.author}.money`, 20);
 
+             if (num === 15)
+             msgObject.channel.send(`Congratulations ${msgObject.member.nickname}! You've won 20$!!!`)
+             db.get(msgObject.member.id)  
+             db.add(`${msgObject.author}.money`, 20);
+
+             if (num === 69)
+             msgObject.channel.send(`Congratulations ${msgObject.member.nickname}! You've won 20$!!!`)
+             db.get(msgObject.member.id)  
+             db.add(`${msgObject.author}.money`, 20);
+        } 
     }
-
-}
+    }

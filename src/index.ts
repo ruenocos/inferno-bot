@@ -3,6 +3,7 @@ import * as ConfigFile from "./config";
 import * as db from "quick.db";
 import { IBotCommand } from "./api";
 import { isNull } from "util";
+import { userInfo } from "os";
 
 const client: Discord.Client = new Discord.Client();
 
@@ -13,9 +14,9 @@ loadCommands(`${__dirname}/commands`)
 client.on("ready", () => {
 
     let allUsers = client.users.array();
-    for(let i = 0; i < allUsers.length; i++){
-        if(isNull(db.get(allUsers[i].id))){
-            db.set(allUsers[i].id, {money: 50, items: [] })
+    for (let i = 0; i < allUsers.length; i++) {
+        if (isNull(db.get(allUsers[i].id))) {
+            db.set(allUsers[i].id, { money: 50, items: [] })
         }
     }
 
@@ -24,6 +25,15 @@ client.on("ready", () => {
     client.on("message", message => {
         client.user.setGame("Hell", "https://www.twitch.tv/noobyninjq")
     });
+    client.on('message', message => {
+        if (message.content.includes('luc'))
+        message.channel.send(`Luke is a fucking nigger`)
+    })
+})
+
+client.on('message', message => {
+    if(message.author.id === '276060004262477825')
+    message.channel.send(`Welcome to eternal agony! 🔥😈`)
 })
 
 client.on('guildMemberAdd', member => {
@@ -39,7 +49,7 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on("guildMemberRemove", member => {
-    
+
 })
 
 client.on("message", msg => {
@@ -101,6 +111,7 @@ function loadCommands(commandsPath: string) {
 
         commands.push(command);
     }
+
 }
 
 client.login(ConfigFile.config.token);

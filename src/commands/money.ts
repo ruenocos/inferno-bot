@@ -18,10 +18,10 @@ export default class money implements IBotCommand {
 
         msgObject.delete(0);
 
-        let moneyAmount = db.get(`${msgObject.author.id}.money`)
-
+        let member = msgObject.mentions.users.first() || msgObject.author;
+        let moneyAmount = db.get(`${member.id}.money`)
         let moneyEmbed = new Discord.RichEmbed()
-            .setTitle(`${msgObject.author.username}'s money`)
+            .setTitle(`${member.id}'𝔰 𝔪𝔬𝔫𝔢𝔶`)
             .setColor('#efff00')
             .setDescription(`${moneyAmount} $`)
 
